@@ -40,7 +40,6 @@ jobs:
           clean archive \
           -sdk iphoneos \
           -configuration Debug \
-          -UseModernBuildSystem=NO \
           -archivePath $PWD/Armadillo \
           CODE_SIGNING_ALLOWED=NO"
 
