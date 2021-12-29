@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
 
       - run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
-        working-directory: android
+        working-directory: apps/mobile/android
         name: Build Android apk (debug)
 
       - uses: actions/upload-artifact@v2

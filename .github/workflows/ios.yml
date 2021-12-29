@@ -25,17 +25,17 @@ jobs:
       - name: Cache pods
         uses: actions/cache@v1
         with:
-          path: ios/Pods
+          path: apps/mobile/ios/Pods
           key: ${{ runner.OS }}-pods-cache-${{ hashFiles('**/ios/Podfile.lock' ) }}
           restore-keys: ${{ runner.OS }}-pods-cache-
 
       - run: pod install
-        working-directory: ios
+        working-directory: apps/mobile/ios
         name: Install pod dependencies
 
       - name: Build iOS (debug)
         run: "xcodebuild \
-          -workspace ios/Armadillo.xcworkspace \
+          -workspace apps/mobile/ios/Armadillo.xcworkspace \
           -scheme Armadillo \
           clean archive \
           -sdk iphoneos \
